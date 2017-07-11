@@ -10,19 +10,19 @@ describe MoviesController do
     end
     subject { @movie }
     its(:director) { expect eq 'director' }
-    # it 'should call method update_attributes and redirect to the same page' do
-    #   @movie.stub(:update_attributes!).and_return(true)
-    #   put :update, { id: '1', movie: @movie }
-    #   response.should redirect_to(movie_path(@movie))
-    # end
+    it 'should call method update_attributes and redirect to the same page' do
+      pending(@movie.stub(:update_attributes!).and_return(true))
+      pending(put :update, { id: '1', movie: @movie })
+      pending(response.should redirect_to(movie_path(@movie)))
+    end
   end
-  describe 'happy path' do
+  describe 'when every thing it is ok' do
     before :each do
       @movie = double(Movie, title: 'Star Wars', director: 'director', id: '1')
       Movie.stub(:find).with('1').and_return(@movie)
     end
     it 'should generate the route find movie path for similars by director' do
-    #   { post: movie_find_path(1) }.should route_to(controller: 'movies', action: 'find', movie_id: '1')
+      #   { post: movie_find_path(1) }.should route_to(controller: 'movies', action: 'find', movie_id: '1')
     end
     it 'sholud call the model method that finds similar movies' do
       @fake_results = [double('movie1'), double('movie2')]

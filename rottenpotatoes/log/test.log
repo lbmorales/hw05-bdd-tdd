@@ -4657,3 +4657,83 @@ Processing by MoviesController#index as HTML
   Rendered movies/index.html.haml within layouts/application (18.9ms)
 Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 0.7ms)
   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by MoviesController#update as HTML
+  Parameters: {"movie"=>"#[Double Movie(id: integer, title: string, rating: string, description: text, release_date: datetime, created_at: datetime, updated_at: datetime, director: string)]", "id"=>"1"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by MoviesController#find as HTML
+  Parameters: {"movie_id"=>"1"}
+  Rendered movies/find.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 58.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by MoviesController#find as HTML
+  Parameters: {"movie_id"=>"1"}
+  Rendered movies/find.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by MoviesController#find as HTML
+  Parameters: {"movie_id"=>"1"}
+Redirected to http://test.host/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2017-07-11 16:09:44.024115"], ["updated_at", "2017-07-11 16:09:44.024115"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["director", "Ridley Scott"], ["updated_at", "2017-07-11 16:09:44.037148"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by MoviesController#update as HTML
+  Parameters: {"movie"=>"#[Double Movie(id: integer, title: string, rating: string, description: text, release_date: datetime, created_at: datetime, updated_at: datetime, director: string)]", "id"=>"1"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by MoviesController#find as HTML
+  Parameters: {"movie_id"=>"1"}
+  Rendered movies/find.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 71ms (Views: 70.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by MoviesController#find as HTML
+  Parameters: {"movie_id"=>"1"}
+  Rendered movies/find.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by MoviesController#find as HTML
+  Parameters: {"movie_id"=>"1"}
+Redirected to http://test.host/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2017-07-11 16:11:54.926295"], ["updated_at", "2017-07-11 16:11:54.926295"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["director", "Ridley Scott"], ["updated_at", "2017-07-11 16:11:54.939095"], ["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

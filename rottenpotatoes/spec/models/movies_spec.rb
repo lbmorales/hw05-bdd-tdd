@@ -28,19 +28,3 @@ describe Movie do
     end
   end
 end
-
-=begin
-  describe "find movie with same director" do
-    before do
-      Movie.create(:title => "star_wars", :director => "Ridley Scott")
-      Movie.create(:title => "blade_runner", :director => "Ridley Scott")
-      Movie.create(:title => "thx", :director => "Ridley Scott")
-    end
-    it "should find movies with similar director"
-    @movies = Movie.find_similars_by_director("Ridley Scott")
-    @movies.each do |movie|
-      assert movie.id == 0 && movie.title == "star_wars" || movie.id == 1 && movie.title == "blade_runner" || movie.id == 2 && movie.title == "thx"
-    end
-  end
-end
-=end
