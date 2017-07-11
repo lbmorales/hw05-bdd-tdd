@@ -14,7 +14,48 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
+      '/movies'
+
+    # Scenario: add director to existing movie
+    when /^the edit page for "(.*)"$/
+      # GET /movies/id/edit
+      edit_movie_path(Movie.find_by(title: $1).id)
+
+    # Scenario: find movie with same director
+    when /^the details page for "(.*)"$/
+      # GET /movies/id
+      movie_path(Movie.find_by(title: $1).id.to_s)
+    # when /^the details page for "(.+)"$/
+    #   movie_path(Movie.find_by_title($1))
+
+    when /^the Similar Movies page for "(.*)"$/
+    #   find_movie_path(Movie.find_by(title: $1))
+    #   same_director_movie_path(Movie.find_by_title($1))
+      id = Movie.find_by_title($1).id.to_s
+      "/movies/#{id}/find"
+
+=begin
+
+  def movieId(t)
+    movie.find_by_title(t).id.to_s
+  end
+
+  case page_name
+
+  when /^the home\s?page$/
+      '/movies'
+    when /^the edit page for "(.*)"/
+      id = movieId($1)
+      "/movies/#{id}/edit"
+    when /^the details page for "(.*)"/
+      id = movieId($1)
+      "/movies/#{id}"
+    when /^the Similar Movies page for "(.*)"/
+      id = movieId($1)
+      "/movies/#{id}/similar"
+=end
+      
+      
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
