@@ -19,11 +19,11 @@ describe Movie do
       @fake_movie = double('Movie')
       @fake_movie.stub(:director).and_return('fake_director')
       @fake_movie.stub(:id).and_return('1')
-      Movie.stub(:find).with(@fake_movie.id).and_return(@fake_movie)
+      Movie.stub(:where).with({director: @fake_movie.director}).and_return([@fake_movie])
     end
     describe 'find same director' do
       it 'should find the movies with the same director' do
-        Movie.find_similars_by_director('1')
+        Movie.find_similars_by_director('fake_director').should eq([@fake_movie])
       end
     end
   end
